@@ -9,4 +9,11 @@
 
 #pragma once
 
-#include <openrct2/interface/Viewport.h>
+namespace OpenRCT2
+{
+    class Formatter;
+    struct Peep;
+
+    void formatPeepActionTo(const Peep& peep, Formatter&, bool asGroup = false);
+
+} // namespace OpenRCT2

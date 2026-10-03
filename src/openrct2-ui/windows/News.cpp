@@ -8,6 +8,7 @@
  *****************************************************************************/
 
 #include <openrct2-ui/interface/Widget.h>
+#include <openrct2-ui/interface/Window.h>
 #include <openrct2-ui/windows/Windows.h>
 #include <openrct2/Context.h>
 #include <openrct2/GameState.h>
@@ -17,6 +18,7 @@
 #include <openrct2/drawing/ColourMap.h>
 #include <openrct2/drawing/Drawing.h>
 #include <openrct2/drawing/Rectangle.h>
+#include <openrct2/drawing/RenderTarget.h>
 #include <openrct2/drawing/Text.h>
 #include <openrct2/entity/EntityRegistry.h>
 #include <openrct2/entity/Peep.h>
@@ -499,7 +501,7 @@ namespace OpenRCT2::Ui::Windows
                     auto ft = Formatter();
                     ft.Add<const char*>(newsItem.text.c_str());
                     drawTextWrapped(
-                        rt, { 2, y + lineHeight }, 325, STR_BOTTOM_TOOLBAR_NEWS_TEXT, ft,
+                        rt, { 2, y + lineHeight }, 325, STR_NEWS_ITEM_TEXT, ft,
                         { Drawing::Colour::brightGreen, FontStyle::small });
                 }
                 // Subject button
@@ -533,7 +535,7 @@ namespace OpenRCT2::Ui::Windows
                                 break;
                             }
 
-                            auto peep = getGameState().entities.TryGetEntity<Peep>(EntityId::FromUnderlying(newsItem.assoc));
+                            auto peep = getGameState().entities.tryGetEntity<Peep>(EntityId::FromUnderlying(newsItem.assoc));
                             if (peep == nullptr)
                             {
                                 break;
@@ -546,7 +548,7 @@ namespace OpenRCT2::Ui::Windows
                             auto spriteType = PeepAnimationGroup::normal;
                             if (auto* staff = peep->as<Staff>(); staff != nullptr)
                             {
-                                spriteType = staff->AnimationGroup;
+                                spriteType = staff->animationGroup;
                                 if (staff->isEntertainer())
                                 {
                                     clipCoords.y += 3;
@@ -554,10 +556,10 @@ namespace OpenRCT2::Ui::Windows
                             }
 
                             auto& objManager = GetContext()->GetObjectManager();
-                            auto* animObj = objManager.GetLoadedObject<PeepAnimationsObject>(peep->AnimationObjectIndex);
+                            auto* animObj = objManager.GetLoadedObject<PeepAnimationsObject>(peep->animationObjectIndex);
 
                             ImageIndex imageId = animObj->GetPeepAnimation(spriteType).baseImage + 1;
-                            auto image = ImageId(imageId, peep->TshirtColour, peep->TrousersColour);
+                            auto image = ImageId(imageId, peep->tShirtColour, peep->trousersColour);
                             GfxDrawSprite(clippedRT, image, clipCoords);
                             break;
                         }
