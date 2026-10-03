@@ -1,0 +1,41 @@
+name: Windows x64 portable
+on:
+  push:
+    branches: [misc-pieces-build]
+  workflow_dispatch:
+
+defaults:
+  run:
+    shell: bash
+env:
+  OPENRCT2_BUILD_SERVER: GitHub
+  OPENRCT2_VERSION: 0.5.5
+
+jobs:
+  windows:
+    name: Windows (x64)
+    runs-on: windows-2025-vs2026
+    env:
+      PLATFORM: x64
+      CONFIGURATION: Release
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Fetch upstream tags
+        run: git fetch --tags https://github.com/OpenRCT2/OpenRCT2.git
+      - name: Install MSVC problem matcher
+        uses: ammaraskar/msvc-problem-matcher@master
+      - name: Build OpenRCT2
+        run: . scripts/setenv && build
+      - name: Build portable
+        run: |
+          . scripts/setenv -q
+          build-portable
+      - name: Upload portable artifact
+        uses: actions/upload-artifact@v6
+        with:
+          name: OpenRCT2-windows-portable-x64
+          path: artifacts/openrct2-portable-*.zip
+          if-no-files-found: error
