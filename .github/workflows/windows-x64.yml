@@ -25,6 +25,10 @@ jobs:
           fetch-depth: 0
       - name: Fetch upstream tags
         run: git fetch --tags https://github.com/OpenRCT2/OpenRCT2.git
+      - name: Compute build distance
+        run: |
+          TAG=$(git describe --tags --abbrev=0)
+          echo "DISTANCE_FROM_TAG=$(git rev-list --count $TAG..HEAD)" >> "$GITHUB_ENV"
       - name: Install MSVC problem matcher
         uses: ammaraskar/msvc-problem-matcher@master
       - name: Build OpenRCT2
