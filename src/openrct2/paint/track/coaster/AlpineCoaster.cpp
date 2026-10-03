@@ -5290,7 +5290,7 @@ namespace OpenRCT2::AlpineRC
                 PaintUtilSetSegmentSupportHeight(
                     session,
                     PaintUtilRotateSegments(
-                        EnumsToFlags(PaintSegment::top, PaintSegment::bottomLeft, PaintSegment::centre, PaintSegment::topRight),
+                        { PaintSegment::top, PaintSegment::bottomLeft, PaintSegment::centre, PaintSegment::topRight },
                         direction),
                     0xFFFF, 0);
                 PaintUtilSetGeneralSupportHeight(session, height + 32);
@@ -5306,9 +5306,7 @@ namespace OpenRCT2::AlpineRC
                 PaintUtilSetSegmentSupportHeight(
                     session,
                     PaintUtilRotateSegments(
-                        EnumsToFlags(
-                            PaintSegment::left, PaintSegment::topLeft, PaintSegment::top, PaintSegment::bottomLeft,
-                            PaintSegment::centre, PaintSegment::topRight),
+                        { PaintSegment::left, PaintSegment::topLeft, PaintSegment::top, PaintSegment::bottomLeft, PaintSegment::centre, PaintSegment::topRight },
                         direction),
                     0xFFFF, 0);
                 PaintUtilSetGeneralSupportHeight(session, height + 32);
@@ -5321,9 +5319,7 @@ namespace OpenRCT2::AlpineRC
                 PaintUtilSetSegmentSupportHeight(
                     session,
                     PaintUtilRotateSegments(
-                        EnumsToFlags(
-                            PaintSegment::bottomLeft, PaintSegment::centre, PaintSegment::topRight, PaintSegment::bottom,
-                            PaintSegment::bottomRight, PaintSegment::right),
+                        { PaintSegment::bottomLeft, PaintSegment::centre, PaintSegment::topRight, PaintSegment::bottom, PaintSegment::bottomRight, PaintSegment::right },
                         direction),
                     0xFFFF, 0);
                 PaintUtilSetGeneralSupportHeight(session, height + 32);
@@ -5342,8 +5338,7 @@ namespace OpenRCT2::AlpineRC
                 PaintUtilSetSegmentSupportHeight(
                     session,
                     PaintUtilRotateSegments(
-                        EnumsToFlags(
-                            PaintSegment::bottomLeft, PaintSegment::centre, PaintSegment::topRight, PaintSegment::bottom),
+                        { PaintSegment::bottomLeft, PaintSegment::centre, PaintSegment::topRight, PaintSegment::bottom },
                         direction),
                     0xFFFF, 0);
                 PaintUtilSetGeneralSupportHeight(session, height + 32);
@@ -5376,8 +5371,7 @@ namespace OpenRCT2::AlpineRC
                 PaintUtilSetSegmentSupportHeight(
                     session,
                     PaintUtilRotateSegments(
-                        EnumsToFlags(
-                            PaintSegment::bottomLeft, PaintSegment::centre, PaintSegment::topRight, PaintSegment::right),
+                        { PaintSegment::bottomLeft, PaintSegment::centre, PaintSegment::topRight, PaintSegment::right },
                         direction),
                     0xFFFF, 0);
                 PaintUtilSetGeneralSupportHeight(session, height + 32);
@@ -5402,9 +5396,7 @@ namespace OpenRCT2::AlpineRC
                 PaintUtilSetSegmentSupportHeight(
                     session,
                     PaintUtilRotateSegments(
-                        EnumsToFlags(
-                            PaintSegment::bottomLeft, PaintSegment::centre, PaintSegment::topRight, PaintSegment::bottom,
-                            PaintSegment::bottomRight, PaintSegment::right),
+                        { PaintSegment::bottomLeft, PaintSegment::centre, PaintSegment::topRight, PaintSegment::bottom, PaintSegment::bottomRight, PaintSegment::right },
                         direction),
                     0xFFFF, 0);
                 PaintUtilSetGeneralSupportHeight(session, height + 32);
@@ -5426,9 +5418,7 @@ namespace OpenRCT2::AlpineRC
                 PaintUtilSetSegmentSupportHeight(
                     session,
                     PaintUtilRotateSegments(
-                        EnumsToFlags(
-                            PaintSegment::left, PaintSegment::topLeft, PaintSegment::top, PaintSegment::bottomLeft,
-                            PaintSegment::centre, PaintSegment::topRight),
+                        { PaintSegment::left, PaintSegment::topLeft, PaintSegment::top, PaintSegment::bottomLeft, PaintSegment::centre, PaintSegment::topRight },
                         direction),
                     0xFFFF, 0);
                 PaintUtilSetGeneralSupportHeight(session, height + 32);
@@ -5462,8 +5452,7 @@ namespace OpenRCT2::AlpineRC
                 PaintUtilSetSegmentSupportHeight(
                     session,
                     PaintUtilRotateSegments(
-                        EnumsToFlags(
-                            PaintSegment::left, PaintSegment::bottomLeft, PaintSegment::centre, PaintSegment::topRight),
+                        { PaintSegment::left, PaintSegment::bottomLeft, PaintSegment::centre, PaintSegment::topRight },
                         direction),
                     0xFFFF, 0);
                 PaintUtilSetGeneralSupportHeight(session, height + 32);
