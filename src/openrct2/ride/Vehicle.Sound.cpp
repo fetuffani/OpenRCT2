@@ -25,16 +25,20 @@ namespace OpenRCT2
     using namespace OpenRCT2::Audio;
     using namespace OpenRCT2::RideVehicle;
 
+    // The blood-curdling scream (scream8) is intentionally left out of all sets. This set is also used by steel coaster
+    // trains (e.g. B&M), so it contains two screams without rolling noise to keep some variety.
     static constexpr SoundId _screamSetMisc[] = {
-        SoundId::scream8,
         SoundId::scream1,
+        SoundId::scream6,
     };
     static constexpr SoundId _screamSetWooden[] = {
         SoundId::scream3, SoundId::scream1, SoundId::scream5, SoundId::scream6,
         SoundId::scream7, SoundId::scream2, SoundId::scream4,
     };
     static constexpr SoundId _screamSetSteel[] = {
+        SoundId::scream4,
         SoundId::scream1,
+        SoundId::scream2,
         SoundId::scream6,
     };
 
