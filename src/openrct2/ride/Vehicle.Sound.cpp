@@ -35,11 +35,10 @@ namespace OpenRCT2
         SoundId::scream3, SoundId::scream1, SoundId::scream5, SoundId::scream6,
         SoundId::scream7, SoundId::scream2, SoundId::scream4,
     };
+    // Wooden and steel coasters share the same screams.
     static constexpr SoundId _screamSetSteel[] = {
-        SoundId::scream4,
-        SoundId::scream1,
-        SoundId::scream2,
-        SoundId::scream6,
+        SoundId::scream3, SoundId::scream1, SoundId::scream5, SoundId::scream6,
+        SoundId::scream7, SoundId::scream2, SoundId::scream4,
     };
 
     void VehicleSoundsUpdate()
