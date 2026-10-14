@@ -1,0 +1,83 @@
+name: Build inclined block brakes
+on:
+  push:
+    branches: [build/inclined-block-brakes]
+  workflow_dispatch:
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  format:
+    name: Check code formatting
+    runs-on: ubuntu-24.04
+    container: ghcr.io/openrct2/openrct2-build:26-format
+    defaults:
+      run:
+        shell: sh
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+      - run: git config --global --add safe.directory $PWD
+      - name: Run clang-format
+        run: |
+          scripts/run-clang-format.py -i --clang-format-executable /usr/lib/llvm20/bin/clang-format -r src test data/shaders --exclude src/thirdparty --extensions "c,h,C,H,cpp,hpp,cc,hh,c++,h++,cxx,hxx,vert,frag,mm" || true
+          git diff > format.patch
+          cat format.patch
+      - name: Upload format patch
+        uses: actions/upload-artifact@v6
+        with:
+          name: format-patch
+          path: format.patch
+      - name: Fail if formatting differs
+        run: git diff --exit-code
+
+  changelog:
+    name: Check changelog formatting
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+      - run: scripts/check-changelog-formatting
+
+  windows:
+    name: Windows (x64)
+    runs-on: windows-2025-vs2026
+    env:
+      OPENRCT2_BUILD_SERVER: GitHub
+      OPENRCT2_VERSION: 0.5.6
+      PLATFORM: x64
+      CONFIGURATION: Release
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Fetch upstream tags
+        run: git fetch --tags https://github.com/OpenRCT2/OpenRCT2.git
+      - name: Compute build distance
+        run: |
+          TAG=$(git describe --tags --abbrev=0)
+          echo "DISTANCE_FROM_TAG=$(git rev-list --count $TAG..HEAD)" >> "$GITHUB_ENV"
+      - name: Install MSVC problem matcher
+        uses: ammaraskar/msvc-problem-matcher@master
+      - name: Build OpenRCT2
+        run: . scripts/setenv && build
+      - name: Build portable
+        run: |
+          . scripts/setenv -q
+          build-portable
+      - name: Upload portable artifact
+        uses: actions/upload-artifact@v6
+        with:
+          name: OpenRCT2-windows-portable-x64
+          path: artifacts/openrct2-portable-*.zip
+          if-no-files-found: error
+      - name: Run Tests
+        run: . scripts/setenv -q && run-tests
+      - name: Test Summary
+        uses: test-summary/action@v2
+        with:
+          paths: "artifacts/test-**.xml"
+        if: always()
