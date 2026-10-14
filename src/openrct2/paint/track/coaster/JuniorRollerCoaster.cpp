@@ -5688,6 +5688,8 @@ TrackPaintFunction GetTrackPaintFunctionJuniorRCTemplate(TrackElemType trackType
         case TrackElemType::up25ToFlat:
             return JuniorRCPaintTrack25DegUpToFlat<TSubType>;
         case TrackElemType::down25:
+        case TrackElemType::down25Brakes:
+        case TrackElemType::down25BlockBrakes:
             return JuniorRC25DegDownPaintSetup<TSubType>;
         case TrackElemType::down60:
             return JuniorRC60DegDownPaintSetup;
@@ -5825,6 +5827,8 @@ TrackPaintFunction GetTrackPaintFunctionJuniorRCTemplate(TrackElemType trackType
         case TrackElemType::diagUp25ToFlat:
             return JuniorRCPaintTrackDiag25DegUpToFlat<TSubType>;
         case TrackElemType::diagDown25:
+        case TrackElemType::diagDown25Brakes:
+        case TrackElemType::diagDown25BlockBrakes:
             return JuniorRCPaintTrackDiag25DegDown<TSubType>;
         case TrackElemType::diagDown60:
             return JuniorRCPaintTrackDiag60DegDown;

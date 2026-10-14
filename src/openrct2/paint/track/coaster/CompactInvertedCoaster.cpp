@@ -9447,6 +9447,8 @@ TrackPaintFunction GetTrackPaintFunctionCompactInvertedRC(TrackElemType trackTyp
         case TrackElemType::up25ToFlat:
             return CompactInvertedRCTrack25DegUpToFlat;
         case TrackElemType::down25:
+        case TrackElemType::down25Brakes:
+        case TrackElemType::down25BlockBrakes:
             return CompactInvertedRCTrack25DegDown;
         case TrackElemType::down60:
             return CompactInvertedRCTrack60DegDown;
@@ -9609,6 +9611,8 @@ TrackPaintFunction GetTrackPaintFunctionCompactInvertedRC(TrackElemType trackTyp
         case TrackElemType::diagUp25ToFlat:
             return CompactInvertedRCTrackDiag25DegUpToFlat;
         case TrackElemType::diagDown25:
+        case TrackElemType::diagDown25Brakes:
+        case TrackElemType::diagDown25BlockBrakes:
             return CompactInvertedRCTrackDiag25DegDown;
         case TrackElemType::diagDown60:
             return CompactInvertedRCTrackDiag60DegDown;

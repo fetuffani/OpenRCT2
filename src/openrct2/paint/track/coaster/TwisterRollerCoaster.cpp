@@ -23664,6 +23664,8 @@ TrackPaintFunction GetTrackPaintFunctionTwisterRC(TrackElemType trackType)
         case TrackElemType::up25ToFlat:
             return TwisterRCTrack25DegUpToFlat;
         case TrackElemType::down25:
+        case TrackElemType::down25Brakes:
+        case TrackElemType::down25BlockBrakes:
             return TwisterRCTrack25DegDown;
         case TrackElemType::down60:
             return TwisterRCTrack60DegDown;
@@ -23830,6 +23832,8 @@ TrackPaintFunction GetTrackPaintFunctionTwisterRC(TrackElemType trackType)
         case TrackElemType::diagUp25ToFlat:
             return TwisterRCTrackDiag25DegUpToFlat;
         case TrackElemType::diagDown25:
+        case TrackElemType::diagDown25Brakes:
+        case TrackElemType::diagDown25BlockBrakes:
             return TwisterRCTrackDiag25DegDown;
         case TrackElemType::diagDown60:
             return TwisterRCTrackDiag60DegDown;

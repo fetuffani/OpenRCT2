@@ -37,6 +37,8 @@ namespace OpenRCT2
             case TrackElemType::cableLiftHill:
             case TrackElemType::blockBrakes:
             case TrackElemType::diagBlockBrakes:
+            case TrackElemType::down25BlockBrakes:
+            case TrackElemType::diagDown25BlockBrakes:
                 return true;
             case TrackElemType::up25ToFlat:
             case TrackElemType::up60ToFlat:

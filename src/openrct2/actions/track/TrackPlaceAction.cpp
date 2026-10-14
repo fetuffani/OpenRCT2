@@ -594,6 +594,8 @@ namespace OpenRCT2::GameActions
                     break;
                 case TrackElemType::brakes:
                 case TrackElemType::diagBrakes:
+                case TrackElemType::down25Brakes:
+                case TrackElemType::diagDown25Brakes:
                     trackElement->setBrakeClosed(true);
                     break;
                 default:
@@ -691,6 +693,8 @@ namespace OpenRCT2::GameActions
                     break;
                 case TrackElemType::diagBlockBrakes:
                 case TrackElemType::blockBrakes:
+                case TrackElemType::down25BlockBrakes:
+                case TrackElemType::diagDown25BlockBrakes:
                 {
                     ride->numBlockBrakes++;
 

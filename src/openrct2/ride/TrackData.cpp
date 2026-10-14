@@ -11093,6 +11093,32 @@ namespace OpenRCT2::TrackMetadata
         .sequenceData = { 3, { kRightBarrelRollDownToUpSeq0, kRightBarrelRollDownToUpSeq1, kRightBarrelRollDownToUpSeq2 } },
     };
 
+    constexpr auto kTEDDown25BlockBrakes = TrackElementDescriptor{
+        .description = STR_BLOCK_BRAKES,
+        .coordinates = { 0, 0, 16, 0, 0, 0 },
+        .pieceLength = 33,
+        .curveChain = { TrackCurve::none, TrackCurve::none },
+        .priceModifier = 114816,
+        .mirrorElement = TrackElemType::down25BlockBrakes,
+        .flags = { TrackElementFlag::down, TrackElementFlag::startsAtHalfHeight },
+        .definition = { TrackGroup::inclinedBlockBrakes, TrackPitch::down25, TrackPitch::down25, TrackRoll::none,
+                        TrackRoll::none, 0 },
+        .sequenceData = { 1, { kDown25Seq0 } },
+    };
+
+    constexpr auto kTEDDiagDown25BlockBrakes = TrackElementDescriptor{
+        .description = STR_BLOCK_BRAKES,
+        .coordinates = { 4, 4, 16, 0, -32, 32 },
+        .pieceLength = 45,
+        .curveChain = { TrackCurve::none, TrackCurve::none },
+        .priceModifier = 114816,
+        .mirrorElement = TrackElemType::diagDown25BlockBrakes,
+        .flags = { TrackElementFlag::down, TrackElementFlag::startsAtHalfHeight },
+        .definition = { TrackGroup::inclinedBlockBrakes, TrackPitch::down25, TrackPitch::down25, TrackRoll::none,
+                        TrackRoll::none, 0 },
+        .sequenceData = { 4, { kDiagDown25Seq0, kDiagDown25Seq1, kDiagDown25Seq2, kDiagDown25Seq3 } },
+    };
+
     static constexpr auto kTrackElementDescriptors = std::to_array<TrackElementDescriptor>(
         { kTEDFlat,
           kTEDEndStation,
@@ -11497,7 +11523,9 @@ namespace OpenRCT2::TrackMetadata
           kTEDDiagHalfLoopUp,
           kTEDDiagHalfLoopDown,
           kTEDDiagLeftVerticalLoop,
-          kTEDDiagRightVerticalLoop });
+          kTEDDiagRightVerticalLoop,
+          kTEDDown25BlockBrakes,
+          kTEDDiagDown25BlockBrakes });
     static_assert(kTrackElementDescriptors.size() == EnumValue(TrackElemType::count));
 
 #pragma endregion

@@ -2532,10 +2532,9 @@ namespace OpenRCT2::Ui::Windows
             if (vehicle->status != Vehicle::Status::crashing && vehicle->status != Vehicle::Status::crashed)
             {
                 auto trackType = vehicle->GetTrackType();
-                if (trackType == TrackElemType::blockBrakes || trackType == TrackElemType::cableLiftHill
+                if (trackTypeIsBlockBrakes(trackType) || trackType == TrackElemType::cableLiftHill
                     || trackType == TrackElemType::up25ToFlat || trackType == TrackElemType::up60ToFlat
-                    || trackType == TrackElemType::diagUp25ToFlat || trackType == TrackElemType::diagUp60ToFlat
-                    || trackType == TrackElemType::diagBlockBrakes)
+                    || trackType == TrackElemType::diagUp25ToFlat || trackType == TrackElemType::diagUp60ToFlat)
                 {
                     if (rtd.SupportsTrackGroup(TrackGroup::blockBrakes) && vehicle->velocity == 0)
                     {

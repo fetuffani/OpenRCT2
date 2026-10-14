@@ -44873,6 +44873,8 @@ static constexpr const VehicleInfoList *TrackVehicleInfoListDefault[] = {
     &TrackVehicleInfoDiagHalfLoopDown0, &TrackVehicleInfoDiagHalfLoopDown1, &TrackVehicleInfoDiagHalfLoopDown2, &TrackVehicleInfoDiagHalfLoopDown3,         // TrackElemType::diagHalfLoopDown
     &TrackVehicleInfoDiagVerticalLoopLeft0, &TrackVehicleInfoDiagVerticalLoopLeft1, &TrackVehicleInfoDiagVerticalLoopLeft2, &TrackVehicleInfoDiagVerticalLoopLeft3,     // TrackElemType::diagLeftVerticalLoop 
     &TrackVehicleInfoDiagVerticalLoopRight0, &TrackVehicleInfoDiagVerticalLoopRight1, &TrackVehicleInfoDiagVerticalLoopRight2, &TrackVehicleInfoDiagVerticalLoopRight3, // TrackElemType::diagRightVerticalLoop
+    &TrackVehicleInfo_8C27B2, &TrackVehicleInfo_8C28D4, &TrackVehicleInfo_8C29F6, &TrackVehicleInfo_8C2B18,  // Down25BlockBrakes
+    &TrackVehicleInfo_916BF6, &TrackVehicleInfo_916D18, &TrackVehicleInfo_916E3A, &TrackVehicleInfo_916F5C,  // DiagDown25BlockBrakes
 };
 
 

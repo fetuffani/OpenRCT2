@@ -6434,6 +6434,8 @@ namespace OpenRCT2::MultiDimensionRCInverted
             fns[EnumValue(up60ToUp25)] = trackPaintUp60ToUp25;
             fns[EnumValue(up25ToFlat)] = trackPaintUp25ToFlat;
             fns[EnumValue(down25)] = trackPaintDown25;
+            fns[EnumValue(down25Brakes)] = trackPaintDown25;
+            fns[EnumValue(down25BlockBrakes)] = trackPaintDown25;
             fns[EnumValue(down60)] = trackPaintDown60;
             fns[EnumValue(flatToDown25)] = trackPaintFlatToDown25;
             fns[EnumValue(down25ToDown60)] = trackPaintDown25ToDown60;
@@ -6487,6 +6489,8 @@ namespace OpenRCT2::MultiDimensionRCInverted
             fns[EnumValue(diagUp60ToUp25)] = trackPaintDiagUp60ToUp25;
             fns[EnumValue(diagUp25ToFlat)] = trackPaintDiagUp25ToFlat;
             fns[EnumValue(diagDown25)] = trackPaintDiagDown25;
+            fns[EnumValue(diagDown25Brakes)] = trackPaintDiagDown25;
+            fns[EnumValue(diagDown25BlockBrakes)] = trackPaintDiagDown25;
             fns[EnumValue(diagDown60)] = trackPaintDiagDown60;
             fns[EnumValue(diagFlatToDown25)] = trackPaintDiagFlatToDown25;
             fns[EnumValue(diagDown25ToDown60)] = trackPaintDiagDown25ToDown60;

@@ -24207,6 +24207,8 @@ TrackPaintFunction GetTrackPaintFunctionCorkscrewRC(TrackElemType trackType)
         case TrackElemType::up25ToFlat:
             return CorkscrewRCTrack25DegUpToFlat;
         case TrackElemType::down25:
+        case TrackElemType::down25Brakes:
+        case TrackElemType::down25BlockBrakes:
             return CorkscrewRCTrack25DegDown;
         case TrackElemType::down60:
             return CorkscrewRCTrack60DegDown;
@@ -24377,6 +24379,8 @@ TrackPaintFunction GetTrackPaintFunctionCorkscrewRC(TrackElemType trackType)
         case TrackElemType::diagUp25ToFlat:
             return CorkscrewRCTrackDiag25DegUpToFlat;
         case TrackElemType::diagDown25:
+        case TrackElemType::diagDown25Brakes:
+        case TrackElemType::diagDown25BlockBrakes:
             return CorkscrewRCTrackDiag25DegDown;
         case TrackElemType::diagDown60:
             return CorkscrewRCTrackDiag60DegDown;

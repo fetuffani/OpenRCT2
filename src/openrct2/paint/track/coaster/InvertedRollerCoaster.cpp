@@ -19188,6 +19188,8 @@ TrackPaintFunction GetTrackPaintFunctionInvertedRC(TrackElemType trackType)
         case TrackElemType::up25ToFlat:
             return InvertedRCTrack25DegUpToFlat;
         case TrackElemType::down25:
+        case TrackElemType::down25Brakes:
+        case TrackElemType::down25BlockBrakes:
             return InvertedRCTrack25DegDown;
         case TrackElemType::down60:
             return InvertedRCTrack60DegDown;
@@ -19346,6 +19348,8 @@ TrackPaintFunction GetTrackPaintFunctionInvertedRC(TrackElemType trackType)
         case TrackElemType::diagUp25ToFlat:
             return InvertedRCTrackDiag25DegUpToFlat;
         case TrackElemType::diagDown25:
+        case TrackElemType::diagDown25Brakes:
+        case TrackElemType::diagDown25BlockBrakes:
             return InvertedRCTrackDiag25DegDown;
         case TrackElemType::diagDown60:
             return InvertedRCTrackDiag60DegDown;

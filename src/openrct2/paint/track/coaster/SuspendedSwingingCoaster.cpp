@@ -4618,6 +4618,8 @@ TrackPaintFunction GetTrackPaintFunctionSuspendedSwingingRC(TrackElemType trackT
         case TrackElemType::up25ToFlat:
             return SuspendedSwingingRCTrack25DegUpToFlat;
         case TrackElemType::down25:
+        case TrackElemType::down25Brakes:
+        case TrackElemType::down25BlockBrakes:
             return SuspendedSwingingRCTrack25DegDown;
         case TrackElemType::down60:
             return SuspendedSwingingRCTrack60DegDown;
@@ -4690,6 +4692,8 @@ TrackPaintFunction GetTrackPaintFunctionSuspendedSwingingRC(TrackElemType trackT
         case TrackElemType::diagUp25ToFlat:
             return SuspendedSwingingRCTrackDiag25DegUpToFlat;
         case TrackElemType::diagDown25:
+        case TrackElemType::diagDown25Brakes:
+        case TrackElemType::diagDown25BlockBrakes:
             return SuspendedSwingingRCTrackDiag25DegDown;
         case TrackElemType::diagDown60:
             return SuspendedSwingingRCTrackDiag60DegDown;

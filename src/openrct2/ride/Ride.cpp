@@ -1759,10 +1759,9 @@ namespace OpenRCT2
         }
 
         auto trackType = vehicle->GetTrackType();
-        if (trackType == TrackElemType::blockBrakes || trackType == TrackElemType::cableLiftHill
+        if (trackTypeIsBlockBrakes(trackType) || trackType == TrackElemType::cableLiftHill
             || trackType == TrackElemType::up25ToFlat || trackType == TrackElemType::up60ToFlat
-            || trackType == TrackElemType::diagUp25ToFlat || trackType == TrackElemType::diagUp60ToFlat
-            || trackType == TrackElemType::diagBlockBrakes)
+            || trackType == TrackElemType::diagUp25ToFlat || trackType == TrackElemType::diagUp60ToFlat)
             if (vehicle->velocity == 0)
                 return;
 
@@ -2817,6 +2816,8 @@ namespace OpenRCT2
             case TrackElemType::cableLiftHill:
             case TrackElemType::diagBrakes:
             case TrackElemType::diagBlockBrakes:
+            case TrackElemType::diagDown25Brakes:
+            case TrackElemType::diagDown25BlockBrakes:
                 GetTrackElementOriginAndApplyChanges(
                     { trackLocation, trackElement.getBaseZ(), trackElement.getDirection() }, trackElement.getTrackType(),
                     isClosed, nullptr, { TrackElementSetFlag::brakeClosed });
@@ -2840,6 +2841,8 @@ namespace OpenRCT2
             {
                 case TrackElemType::blockBrakes:
                 case TrackElemType::diagBlockBrakes:
+                case TrackElemType::down25BlockBrakes:
+                case TrackElemType::diagDown25BlockBrakes:
                     BlockBrakeSetLinkedBrakesClosed(
                         CoordsXYZ(currentElement.x, currentElement.y, currentElement.element->getBaseZ()),
                         *currentElement.element->asTrack(), false);
@@ -3303,6 +3306,7 @@ namespace OpenRCT2
                     }
                     [[fallthrough]];
                 case TrackElemType::diagBlockBrakes:
+                case TrackElemType::diagDown25BlockBrakes:
                 {
                     TileElement* tileElement = MapGetTrackElementAtOfTypeSeq(
                         { trackBeginEnd.begin_x, trackBeginEnd.begin_y, trackBeginEnd.begin_z }, trackType, 0);
@@ -3325,6 +3329,7 @@ namespace OpenRCT2
                     [[fallthrough]];
                 case TrackElemType::endStation:
                 case TrackElemType::blockBrakes:
+                case TrackElemType::down25BlockBrakes:
                     *outXYElement = { trackPos, reinterpret_cast<TileElement*>(trackElement) };
                     return;
                 default:
@@ -4727,6 +4732,7 @@ namespace OpenRCT2
             { SpriteGroupType::slopes60, SpritePrecision::sprites8, SpriteGroupType::slopes75, SpritePrecision::sprites8,
               SpriteGroupType::slopes90, SpritePrecision::sprites8, SpriteGroupType::slopesLoop, SpritePrecision::sprites8,
               SpriteGroupType::slopeInverted, SpritePrecision::sprites8 }, // TrackGroup::diagVerticalLoop
+            { SpriteGroupType::slopes25, SpritePrecision::sprites8 }, // TrackGroup::inclinedBlockBrakes
         };
 
         static_assert(std::size(trackPieceRequiredSprites) == EnumValue(TrackGroup::count));

@@ -441,7 +441,10 @@ namespace OpenRCT2
         diagLeftVerticalLoop = 402,
         diagRightVerticalLoop = 403,
 
-        count = 404,
+        down25BlockBrakes = 404,
+        diagDown25BlockBrakes = 405,
+
+        count = 406,
 
         none = 65535,
     };

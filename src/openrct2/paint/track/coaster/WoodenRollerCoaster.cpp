@@ -13324,6 +13324,8 @@ TrackPaintFunction GetTrackPaintFunctionWoodenAndClassicWoodenRC(TrackElemType t
         case TrackElemType::up25ToFlat:
             return WoodenRCTrack25DegUpToFlat<isClassic>;
         case TrackElemType::down25:
+        case TrackElemType::down25Brakes:
+        case TrackElemType::down25BlockBrakes:
             return WoodenRCTrack25DegDown<isClassic>;
         case TrackElemType::down60:
             return WoodenRCTrack60DegDown<isClassic>;
@@ -13480,6 +13482,8 @@ TrackPaintFunction GetTrackPaintFunctionWoodenAndClassicWoodenRC(TrackElemType t
         case TrackElemType::diagUp25ToFlat:
             return WoodenRCTrackDiag25DegUpToFlat<isClassic>;
         case TrackElemType::diagDown25:
+        case TrackElemType::diagDown25Brakes:
+        case TrackElemType::diagDown25BlockBrakes:
             return WoodenRCTrackDiag25DegDown<isClassic>;
         case TrackElemType::diagDown60:
             return WoodenRCTrackDiag60DegDown<isClassic>;

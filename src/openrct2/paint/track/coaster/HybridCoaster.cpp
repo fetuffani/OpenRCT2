@@ -17014,8 +17014,10 @@ namespace OpenRCT2::HybridRC
             case TrackElemType::booster:
                 return Trackbooster;
             case TrackElemType::down25Brakes:
+            case TrackElemType::down25BlockBrakes:
                 return Track25DegDownBrakes;
             case TrackElemType::diagDown25Brakes:
+            case TrackElemType::diagDown25BlockBrakes:
                 return TrackDiag25DegDownBrakes;
 
             case TrackElemType::leftQuarterHelixLargeUp:

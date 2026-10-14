@@ -247,6 +247,8 @@ namespace OpenRCT2
                 }
                 [[fallthrough]];
             case TrackElemType::diagBlockBrakes:
+            case TrackElemType::down25BlockBrakes:
+            case TrackElemType::diagDown25BlockBrakes:
                 if (curRide->isBlockSectioned() && trackElement->asTrack()->isBrakeClosed())
                     applyStopBlockBrake();
                 else

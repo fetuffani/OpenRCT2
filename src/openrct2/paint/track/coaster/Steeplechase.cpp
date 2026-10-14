@@ -2162,6 +2162,8 @@ TrackPaintFunction GetTrackPaintFunctionSteeplechase(TrackElemType trackType)
         case TrackElemType::up25ToFlat:
             return SteeplechaseTrack25DegUpToFlat;
         case TrackElemType::down25:
+        case TrackElemType::down25Brakes:
+        case TrackElemType::down25BlockBrakes:
             return SteeplechaseTrack25DegDown;
         case TrackElemType::flatToDown25:
             return SteeplechaseTrackFlatTo25DegDown;
@@ -2198,6 +2200,8 @@ TrackPaintFunction GetTrackPaintFunctionSteeplechase(TrackElemType trackType)
         case TrackElemType::diagUp25ToFlat:
             return SteeplechaseTrackDiag25DegUpToFlat;
         case TrackElemType::diagDown25:
+        case TrackElemType::diagDown25Brakes:
+        case TrackElemType::diagDown25BlockBrakes:
             return SteeplechaseTrackDiag25DegDown;
         case TrackElemType::diagFlatToDown25:
             return SteeplechaseTrackDiagFlatTo25DegDown;

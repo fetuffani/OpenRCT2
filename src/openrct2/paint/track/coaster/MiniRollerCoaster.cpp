@@ -8848,6 +8848,8 @@ TrackPaintFunction GetTrackPaintFunctionMiniRC(TrackElemType trackType)
         case TrackElemType::up25ToFlat:
             return MiniRCTrack25DegUpToFlat;
         case TrackElemType::down25:
+        case TrackElemType::down25Brakes:
+        case TrackElemType::down25BlockBrakes:
             return MiniRCTrack25DegDown;
         case TrackElemType::down60:
             return MiniRCTrack60DegDown;
@@ -8990,6 +8992,8 @@ TrackPaintFunction GetTrackPaintFunctionMiniRC(TrackElemType trackType)
         case TrackElemType::diagUp25ToFlat:
             return MiniRCTrackDiag25DegUpToFlat;
         case TrackElemType::diagDown25:
+        case TrackElemType::diagDown25Brakes:
+        case TrackElemType::diagDown25BlockBrakes:
             return MiniRCTrackDiag25DegDown;
         case TrackElemType::diagDown60:
             return MiniRCTrackDiag60DegDown;

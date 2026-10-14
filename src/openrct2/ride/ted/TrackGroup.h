@@ -128,6 +128,8 @@ namespace OpenRCT2
         diagHalfLoop,
         diagVerticalLoop,
 
+        inclinedBlockBrakes,
+
         count,
     };
 } // namespace OpenRCT2
