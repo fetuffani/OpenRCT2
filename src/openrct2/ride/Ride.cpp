@@ -2816,6 +2816,7 @@ namespace OpenRCT2
             case TrackElemType::cableLiftHill:
             case TrackElemType::diagBrakes:
             case TrackElemType::diagBlockBrakes:
+            case TrackElemType::diagDown25Brakes:
             case TrackElemType::diagDown25BlockBrakes:
                 GetTrackElementOriginAndApplyChanges(
                     { trackLocation, trackElement.getBaseZ(), trackElement.getDirection() }, trackElement.getTrackType(),
