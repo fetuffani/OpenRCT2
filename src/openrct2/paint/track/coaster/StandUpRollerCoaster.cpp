@@ -18082,6 +18082,8 @@ TrackPaintFunction GetTrackPaintFunctionStandUpRC(TrackElemType trackType)
         case TrackElemType::up25ToFlat:
             return StandUpRCTrack25DegUpToFlat;
         case TrackElemType::down25:
+        case TrackElemType::down25Brakes:
+        case TrackElemType::down25BlockBrakes:
             return StandUpRCTrack25DegDown;
         case TrackElemType::down60:
             return StandUpRCTrack60DegDown;
@@ -18224,6 +18226,8 @@ TrackPaintFunction GetTrackPaintFunctionStandUpRC(TrackElemType trackType)
         case TrackElemType::diagUp25ToFlat:
             return StandUpRCTrackDiag25DegUpToFlat;
         case TrackElemType::diagDown25:
+        case TrackElemType::diagDown25Brakes:
+        case TrackElemType::diagDown25BlockBrakes:
             return StandUpRCTrackDiag25DegDown;
         case TrackElemType::diagDown60:
             return StandUpRCTrackDiag60DegDown;

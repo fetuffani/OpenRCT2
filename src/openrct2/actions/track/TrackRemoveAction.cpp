@@ -423,6 +423,8 @@ namespace OpenRCT2::GameActions
                     break;
                 case TrackElemType::blockBrakes:
                 case TrackElemType::diagBlockBrakes:
+                case TrackElemType::down25BlockBrakes:
+                case TrackElemType::diagDown25BlockBrakes:
                     ride->numBlockBrakes--;
                     if (ride->numBlockBrakes == 0 && ride->isBlockSectioned())
                     {

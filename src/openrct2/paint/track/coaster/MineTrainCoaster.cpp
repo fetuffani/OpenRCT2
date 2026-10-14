@@ -7156,6 +7156,8 @@ TrackPaintFunction GetTrackPaintFunctionMineTrainRC(TrackElemType trackType)
         case TrackElemType::up25ToFlat:
             return MineTrainRCTrack25DegUpToFlat;
         case TrackElemType::down25:
+        case TrackElemType::down25Brakes:
+        case TrackElemType::down25BlockBrakes:
             return MineTrainRCTrack25DegDown;
         case TrackElemType::down60:
             return MineTrainRCTrack60DegDown;
@@ -7282,6 +7284,8 @@ TrackPaintFunction GetTrackPaintFunctionMineTrainRC(TrackElemType trackType)
         case TrackElemType::diagUp25ToFlat:
             return MineTrainRCTrackDiag25DegUpToFlat;
         case TrackElemType::diagDown25:
+        case TrackElemType::diagDown25Brakes:
+        case TrackElemType::diagDown25BlockBrakes:
             return MineTrainRCTrackDiag25DegDown;
         case TrackElemType::diagDown60:
             return MineTrainRCTrackDiag60DegDown;

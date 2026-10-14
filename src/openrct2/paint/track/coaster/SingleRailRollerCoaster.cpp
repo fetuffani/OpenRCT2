@@ -20032,8 +20032,10 @@ namespace OpenRCT2::SingleRailRC
             case TrackElemType::rightEighthBankToOrthogonalDown25:
                 return TrackRightEighthBankToOrthogonalDown25;
             case TrackElemType::down25Brakes:
+            case TrackElemType::down25BlockBrakes:
                 return Track25DegDownBrakes;
             case TrackElemType::diagDown25Brakes:
+            case TrackElemType::diagDown25BlockBrakes:
                 return TrackDiag25DegDownBrakes;
             case TrackElemType::leftQuarterHelixLargeUp:
                 return OpenRCT2::trackPaintLeftQuarterHelixLargeUp<

@@ -116,7 +116,16 @@ namespace OpenRCT2
 
     bool trackTypeIsBlockBrakes(TrackElemType trackType)
     {
-        return (trackType == TrackElemType::blockBrakes) || (trackType == TrackElemType::diagBlockBrakes);
+        switch (trackType)
+        {
+            case TrackElemType::blockBrakes:
+            case TrackElemType::diagBlockBrakes:
+            case TrackElemType::down25BlockBrakes:
+            case TrackElemType::diagDown25BlockBrakes:
+                return true;
+            default:
+                return false;
+        }
     }
 
     bool trackTypeIsBooster(TrackElemType trackType)

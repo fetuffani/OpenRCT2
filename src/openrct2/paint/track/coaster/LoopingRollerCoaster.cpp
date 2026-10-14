@@ -10158,6 +10158,8 @@ TrackPaintFunction GetTrackPaintFunctionLoopingRC(TrackElemType trackType)
         case TrackElemType::up25ToFlat:
             return LoopingRCTrack25DegUpToFlat;
         case TrackElemType::down25:
+        case TrackElemType::down25Brakes:
+        case TrackElemType::down25BlockBrakes:
             return LoopingRCTrack25DegDown;
         case TrackElemType::down60:
             return LoopingRCTrack60DegDown;
@@ -10304,6 +10306,8 @@ TrackPaintFunction GetTrackPaintFunctionLoopingRC(TrackElemType trackType)
         case TrackElemType::diagUp25ToFlat:
             return LoopingRCTrackDiag25DegUpToFlat;
         case TrackElemType::diagDown25:
+        case TrackElemType::diagDown25Brakes:
+        case TrackElemType::diagDown25BlockBrakes:
             return LoopingRCTrackDiag25DegDown;
         case TrackElemType::diagDown60:
             return LoopingRCTrackDiag60DegDown;

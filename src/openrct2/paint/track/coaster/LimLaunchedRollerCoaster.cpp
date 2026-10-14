@@ -5708,6 +5708,8 @@ TrackPaintFunction GetTrackPaintFunctionLimLaunchedRC(TrackElemType trackType)
         case TrackElemType::up60ToUp25:
         case TrackElemType::up25ToFlat:
         case TrackElemType::down25:
+        case TrackElemType::down25Brakes:
+        case TrackElemType::down25BlockBrakes:
         case TrackElemType::down60:
         case TrackElemType::flatToDown25:
         case TrackElemType::down25ToDown60:
@@ -5778,6 +5780,8 @@ TrackPaintFunction GetTrackPaintFunctionLimLaunchedRC(TrackElemType trackType)
         case TrackElemType::diagUp60ToUp25:
         case TrackElemType::diagUp25ToFlat:
         case TrackElemType::diagDown25:
+        case TrackElemType::diagDown25Brakes:
+        case TrackElemType::diagDown25BlockBrakes:
         case TrackElemType::diagDown60:
         case TrackElemType::diagFlatToDown25:
         case TrackElemType::diagDown25ToDown60:

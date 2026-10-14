@@ -2899,6 +2899,7 @@ TrackPaintFunction GetTrackPaintFunctionSideFrictionRC(TrackElemType trackType)
         case TrackElemType::up25ToFlat:
             return SideFrictionRCTrack25DegUpToFlat;
         case TrackElemType::down25:
+        case TrackElemType::down25Brakes:
             return SideFrictionRCTrack25DegDown;
         case TrackElemType::flatToDown25:
             return SideFrictionRCTrackFlatTo25DegDown;
@@ -2935,6 +2936,7 @@ TrackPaintFunction GetTrackPaintFunctionSideFrictionRC(TrackElemType trackType)
         case TrackElemType::diagUp25ToFlat:
             return SideFrictionRCTrackDiag25DegUpToFlat;
         case TrackElemType::diagDown25:
+        case TrackElemType::diagDown25Brakes:
             return SideFrictionRCTrackDiag25DegDown;
         case TrackElemType::diagFlatToDown25:
             return SideFrictionRCTrackDiagFlatTo25DegDown;

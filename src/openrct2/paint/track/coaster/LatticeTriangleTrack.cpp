@@ -19228,6 +19228,8 @@ TrackPaintFunction GetTrackPaintFunctionLatticeTriangleTrack(TrackElemType track
         case TrackElemType::up25ToFlat:
             return LatticeTriangleTrack25DegUpToFlat;
         case TrackElemType::down25:
+        case TrackElemType::down25Brakes:
+        case TrackElemType::down25BlockBrakes:
             return LatticeTriangleTrack25DegDown;
         case TrackElemType::down60:
             return LatticeTriangleTrack60DegDown;
@@ -19380,6 +19382,8 @@ TrackPaintFunction GetTrackPaintFunctionLatticeTriangleTrack(TrackElemType track
         case TrackElemType::diagUp25ToFlat:
             return LatticeTriangleTrackDiag25DegUpToFlat;
         case TrackElemType::diagDown25:
+        case TrackElemType::diagDown25Brakes:
+        case TrackElemType::diagDown25BlockBrakes:
             return LatticeTriangleTrackDiag25DegDown;
         case TrackElemType::diagDown60:
             return LatticeTriangleTrackDiag60DegDown;

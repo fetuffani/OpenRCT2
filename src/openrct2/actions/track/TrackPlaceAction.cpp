@@ -691,6 +691,8 @@ namespace OpenRCT2::GameActions
                     break;
                 case TrackElemType::diagBlockBrakes:
                 case TrackElemType::blockBrakes:
+                case TrackElemType::down25BlockBrakes:
+                case TrackElemType::diagDown25BlockBrakes:
                 {
                     ride->numBlockBrakes++;
 
