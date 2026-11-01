@@ -735,7 +735,8 @@ namespace OpenRCT2::Ui::Windows
             {
                 if (!IsTrackEnabled(TrackGroup::steepToBank) || _currentTrackRollEnd != TrackRoll::none)
                     newDisabledWidgets |= (1uLL << WIDX_SLOPE_DOWN_STEEP) | (1uLL << WIDX_SLOPE_UP_STEEP);
-                newDisabledWidgets |= (1uLL << WIDX_CHAIN_LIFT);
+                newDisabledWidgets |= (1uLL << WIDX_CHAIN_LIFT) | (1uLL << WIDX_LEFT_CURVE_VERY_SMALL)
+                    | (1uLL << WIDX_RIGHT_CURVE_VERY_SMALL);
             }
             if (_currentlySelectedTrack != TrackCurve::none)
             {
